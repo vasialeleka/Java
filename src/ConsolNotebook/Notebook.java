@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Notebook {
     public static void main(String[] args) {
         boolean flag = true;
-        int i = 0;
+        //int i = 0;
        ArrayList all_notes = new ArrayList();
         while (flag) {
             System.out.println("Push 1 for new note.\n 2 - see all notes.\n 3- close");
@@ -20,10 +20,15 @@ public class Notebook {
                     String note;
                     note = noteline.nextLine();
                     all_notes.add(note);
-                    System.out.println(note);
+                    System.out.flush();
+                    //System.out.println(note);
                     break;
                 case 2:
-                    System.out.println(all_notes);
+                    for (int i= 0; i <all_notes.size(); i++){
+
+                    System.out.println("Note "+(i+1)+":"+all_notes.get(i));
+                        System.out.println("");}
+                   // System.out.println(all_notes.size());
                     break;
                 case 3:
                     flag = false;
@@ -32,6 +37,7 @@ public class Notebook {
                 default:
                     System.out.println("I don't know");
 
+                     break;
 
             }
 
